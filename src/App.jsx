@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 
-import { Routes, Route, Link } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
 
 //Páginas
 import Home from './components/pages/Home'
@@ -28,6 +28,7 @@ import ProjectEdit from './components/pages/ProjectEdit'
 
       <Container customClass="min-height">
 
+      <BrowserRouter>
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/projects' element={<Projects />} />
@@ -36,6 +37,7 @@ import ProjectEdit from './components/pages/ProjectEdit'
                 <Route  path='/project/:id' element={ <ProjectEdit /> }/>
                 <Route path='/company' element={<Company />} />
             </Routes>
+        </BrowserRouter>    
         </Container>    
 
         <Footer />
