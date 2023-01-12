@@ -28,7 +28,7 @@ import ProjectEdit from './components/pages/ProjectEdit'
 
       <Container customClass="min-height">
 
-      <BrowserRouter>
+   
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/projects' element={<Projects />} />
@@ -37,7 +37,7 @@ import ProjectEdit from './components/pages/ProjectEdit'
                 <Route  path='/project/:id' element={ <ProjectEdit /> }/>
                 <Route path='/company' element={<Company />} />
             </Routes>
-        </BrowserRouter>    
+       
         </Container>    
 
         <Footer />
