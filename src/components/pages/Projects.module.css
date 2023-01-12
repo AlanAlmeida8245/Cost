@@ -1,0 +1,15 @@
+
+.project_container{
+    padding: 2em;
+   margin: 0 auto;
+}
+.title_container{
+    display: flex;
+    
+    margin-bottom: 2em;
+    
+}
+
+.space_sla{
+    padding-bottom: 2em;
+}
