@@ -55,8 +55,7 @@ function Projects(){
     return(
         <div className={styles.project_container}>
             <div className={styles.title_container}>
-                <h1>Meus Projetos</h1>
-                   
+                <h1>Meus Projetos</h1>  
             </div>
             <div className={styles.space_sla}>
                 <LinkButton to="/newproject" texto="Criar Projeto"/> 
