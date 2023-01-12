@@ -28,7 +28,7 @@ function ProjectEdit() {
     // Para ver o loading
     setTimeout(
       () =>
-        fetch(`http://localhost:5000/projects/${id}`, {
+        fetch(`https://my-json-server.typicode.com/AlanAlmeida8245/Cost/projects/${id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ function ProjectEdit() {
       return false
     }
 
-    fetch(`http://localhost:5000/projects/${project.id}`, {
+    fetch(`https://my-json-server.typicode.com/AlanAlmeida8245/Cost/projects${project.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ function ProjectEdit() {
     // add service cost to project cost total
     project.cost = newCost
 
-    fetch(`http://localhost:5000/projects/${project.id}`, {
+    fetch(`https://my-json-server.typicode.com/AlanAlmeida8245/Cost/projects/${project.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ function ProjectEdit() {
     projectUpdated.services = servicesUpdated
     projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
 
-    fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+    fetch(`https://my-json-server.typicode.com/AlanAlmeida8245/Cost/projects/${projectUpdated.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
