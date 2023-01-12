@@ -13,7 +13,7 @@ import Projects from './components/pages/Projects.jsx'
 
 import Container from './components/layouts/Container.jsx'
 import Navbar from './components/layouts/Navbar.jsx'
-import Footer from './components/layouts/Foote.jsxr'
+import Footer from './components/layouts/Footer.jsx'
 import ProjectEdit from './components/pages/ProjectEdit.jsx'
 
   function App() {
