@@ -23,7 +23,7 @@ function Projects(){
     }
 
     useEffect(() => {
-        fetch('https://my-json-server.typicode.com/AlanAlmeida8245/Cost/projects', {
+        fetch('http://localhost:5000/projects', {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ function Projects(){
     }, [])
 
     function removeProject(id){
-        fetch(`https://my-json-server.typicode.com/AlanAlmeida8245/Cost/projects/${id}`, {
+        fetch(`http://localhost:5000/projects/${id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': "application/json"

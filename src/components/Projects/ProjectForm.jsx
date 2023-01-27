@@ -16,7 +16,7 @@ function ProjectForm({handleSubmit, btnText, projectData})
     const [project, setProject] = useState(projectData || {})
 
         useEffect(() => {
-            fetch("http://localhost:5000/categories", {
+            fetch("https://my-json-server.typicode.com/AlanAlmeida8245/Cost/categories", {
             method: "GET",
             header: {
                 'Content-Type': 'application/json'

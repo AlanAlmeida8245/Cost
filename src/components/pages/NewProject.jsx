@@ -14,7 +14,7 @@ function NewProject(){
         project.cost = 0
         project.services = []
 
-        fetch("https://my-json-server.typicode.com/AlanAlmeida8245/Cost/projects", {
+        fetch("http://localhost:5000/projects", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

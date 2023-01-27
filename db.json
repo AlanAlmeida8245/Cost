@@ -1,14 +1,27 @@
 {
   "projects": [
     {
-      "name": "Construir Casa",
-      "budget": "30000",
+      "name": "Comprar Carro",
+      "budget": "50000",
       "category": {
-        "id": "4",
-        "name": "Planejamento"
+        "id": "1",
+        "name": "infra"
       },
-      "cost": 0,
-      "services": [],
+      "cost": 1647,
+      "services": [
+        {
+          "name": "teataee",
+          "cost": "414",
+          "description": "eaeaeaea",
+          "id": "4115c416-aeda-412e-b6c5-6a96a6ab7e75"
+        },
+        {
+          "name": "aaaaaaaa",
+          "cost": "1233",
+          "description": "isso msm",
+          "id": "dfa69cf5-1825-4176-a665-af91e52b76ee"
+        }
+      ],
       "id": 1
     }
   ],
