@@ -25,7 +25,7 @@ function ProjectEdit() {
 
   useEffect(() => {
     // 
-        fetch(`https://back-end-costs-production.up.railway.app/https://back-end-costs-production.up.railway.app/projetos/${id}`, {
+        fetch(`https://back-end-costs-production.up.railway.app/projetos/${id}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ function ProjectEdit() {
       return false
     }
 
-    fetch(`https://back-end-costs-production.up.railway.app/https://back-end-costs-production.up.railway.app/projetos/${project._id}`, {
+    fetch(`https://back-end-costs-production.up.railway.app/projetos/${project._id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -78,7 +78,7 @@ function ProjectEdit() {
       return false
     }
    
-    fetch(`https://back-end-costs-production.up.railway.app/https://back-end-costs-production.up.railway.app/projetos/${project._id}`, { // Adiciona o Serviço no Banco de Dados
+    fetch(`https://back-end-costs-production.up.railway.app/projetos/${project._id}`, { // Adiciona o Serviço no Banco de Dados
         method: "PUT",
         headers: {
             "Content-type": "application/json"
@@ -102,7 +102,7 @@ function ProjectEdit() {
     // add service cost to project cost total
     project.custo = newCost
   
-    fetch(`https://back-end-costs-production.up.railway.app/https://back-end-costs-production.up.railway.app/projetos/${project._id}`, {
+    fetch(`https://back-end-costs-production.up.railway.app/projetos/${project._id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -130,7 +130,7 @@ function ProjectEdit() {
     projectUpdated.servicos = servicesUpdated
     projectUpdated.custo = parseFloat(projectUpdated.custo) - parseFloat(cost)
    
-    fetch(`https://back-end-costs-production.up.railway.app/https://back-end-costs-production.up.railway.app/projetos/${projectUpdated._id}/${id}`, {
+    fetch(`https://back-end-costs-production.up.railway.app/projetos/${projectUpdated._id}/${id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
