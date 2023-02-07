@@ -11,10 +11,14 @@ function NewProject(){
 
     function createPost(project){
         //initialize  cost and services
-        project.cost = 0
-        project.services = []
+        
+            
+            project.cost = 0
+            project.services = []
+        
+        
 
-        fetch("http://localhost:5000/projects", {
+        fetch("https://back-end-costs-production.up.railway.app/https://back-end-costs-production.up.railway.app/cadastrar", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -22,7 +26,7 @@ function NewProject(){
             body: JSON.stringify(project)
         }).then((resp) => resp.json())
         .then((data) => {
-            console.log(data);
+           
             //redirect
             history('/projects', { state: { message: 'Projeto criado com sucesso!' } })
 

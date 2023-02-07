@@ -16,7 +16,7 @@ function ProjectForm({handleSubmit, btnText, projectData})
     const [project, setProject] = useState(projectData || {})
 
         useEffect(() => {
-            fetch("https://my-json-server.typicode.com/AlanAlmeida8245/Cost/categories", {
+            fetch("https://back-end-costs-production.up.railway.app/https://back-end-costs-production.up.railway.app/categorias", {
             method: "GET",
             header: {
                 'Content-Type': 'application/json'
@@ -24,6 +24,7 @@ function ProjectForm({handleSubmit, btnText, projectData})
         }).then((response) => response.json()) //pega os dados da resposta e passa para JSON
         .then((data) => {
             setCategories(data)
+            console.log(data)
         })
         .catch((error) => console.log(error))
     }, [])
@@ -36,11 +37,11 @@ function ProjectForm({handleSubmit, btnText, projectData})
 
     function handleChange(e){
         setProject({...project, [e.target.name]: e.target.value})
-  
+
     }
 
     function handleCategory(e){
-        setProject({...project, category: {
+        setProject({...project, categoria: {
             id: e.target.value,
             name: e.target.options[e.target.selectedIndex].text,
         }})
@@ -49,12 +50,12 @@ function ProjectForm({handleSubmit, btnText, projectData})
 
     return (
             <form onSubmit={submit} className={styles.form}>
-                    <Input type="text" text="Nome do Projeto" name="name" placeholder="Insira o nome do projeto" handleOnChange={handleChange} value={project.name ? project.name: ''}/>
+                    <Input type="text" text="Nome do Projeto" name="nome" placeholder="Insira o nome do projeto" handleOnChange={handleChange} value={project.nome ? project.nome: ''}/>
 
-                    <Input type="number" text="Orçamento do Projeto" name="budget" placeholder="Insira o orçamento do total" handleOnChange={handleChange} value={project.budget ? project.budget: ''} />
+                    <Input type="number" text="Orçamento do Projeto" name="orcamento" placeholder="Insira o orçamento do total" handleOnChange={handleChange} value={project.orcamento ? project.orcamento: ''} />
             
                 <Select name="category_id" text="Selecione a Categoria" options={categories} handleOnChange={handleCategory} 
-                value={project.category ? project.category.id : ''}
+                value={project.categoria ? project.categoria.id : ''}
                 
                 />
 

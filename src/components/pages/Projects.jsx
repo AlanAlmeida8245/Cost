@@ -23,35 +23,40 @@ function Projects(){
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/projects', {
+        fetch('https://back-end-costs-production.up.railway.app/https://back-end-costs-production.up.railway.app/projetos', {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
             },
         }).then(resp => resp.json())
          .then(data => {
-            console.log(data)
+           
             setProjects(data)
             setRemoveLoading(true)
          }).catch(erro => console.log(erro))
     }, [])
 
+    
+
     function removeProject(id){
-        fetch(`http://localhost:5000/projects/${id}`, {
+        fetch(`https://back-end-costs-production.up.railway.app/https://back-end-costs-production.up.railway.app/projeto/${id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': "application/json"
             },
         }).then(resp => resp.json())
         .then(data => {
-            setProjects(projects.filter((project) => project.id != id))
+            setProjects(projects.filter((project) => project._id != id))
             setProjectMessage('Projeto removido com sucesso!')
             //message
         })
-        .catch(error => console.log(error))
+        .catch((error) => {
+            console.log(error)
+        })
 
     }
 
+        
     return(
         <div className={styles.project_container}>
             <div className={styles.title_container}>
@@ -66,13 +71,14 @@ function Projects(){
                     {projects.length > 0 &&
                         projects.map((project) => 
                              <ProjectCard 
-                             id={project.id}
-                             name={project.name}
-                             budget={project.budget}
-                             category={project.category.name}
-                             key={project.id}
+                             id={project._id}
+                             name={project.nome}
+                             budget={project.orcamento}
+                             category={project.categoria}
+                             key={project._id}
                              handleRemove={removeProject}
-                             
+                             cost = {project.custo}
+
                              />
                         )}
                         {!removeLoading && <Loading />}

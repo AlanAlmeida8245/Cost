@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Input from "../Form/Input"
 import Submit from "../Form/Submit"
+import { parse, v4 as uuidv4 } from 'uuid'
 
 import styles from "../Projects/ProjectForm.module.css"
 
@@ -10,12 +11,12 @@ function ServiceForm({handleSubmit, btnText, projectData}){
 
     function submit(e){
         e.preventDefault();
-        projectData.services.push(service) //insere o projeto
-        handleSubmit(projectData)
+       service.id = uuidv4()
+
+       handleSubmit(projectData, service)
     }
     function handleChange(e){
         setService({...service, [e.target.name]: e.target.value})
-
     }
 
         return(
@@ -23,7 +24,7 @@ function ServiceForm({handleSubmit, btnText, projectData}){
                <Input
                     type="text"
                     text="Nome do Serviço"
-                    name="name"
+                    name="nomeServico"
                     placeholder="insira o nome do serviço"
                     handleOnChange={handleChange}
                />
@@ -31,7 +32,7 @@ function ServiceForm({handleSubmit, btnText, projectData}){
                 <Input
                     type="number"
                     text="Custo do Serviço"
-                    name="cost"
+                    name="custoServico"
                     placeholder="insira o valor total"
                     handleOnChange={handleChange}
                />
@@ -39,7 +40,7 @@ function ServiceForm({handleSubmit, btnText, projectData}){
                 <Input
                     type="text"
                     text="Descrição do Serviço"
-                    name="description"
+                    name="descricao"
                     placeholder="Escreva o serviço"
                     handleOnChange={handleChange}
                />
