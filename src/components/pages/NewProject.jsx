@@ -18,7 +18,7 @@ function NewProject(){
         
         
 
-        fetch("https://back-end-costs-production.up.railway.app/cadastrar", {
+        fetch("https://back-end-costs.vercel.app/cadastrar", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

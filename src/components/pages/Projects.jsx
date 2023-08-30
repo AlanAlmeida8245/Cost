@@ -23,7 +23,7 @@ function Projects(){
     }
 
     useEffect(() => {
-        fetch('https://back-end-costs-production.up.railway.app/projetos', {
+        fetch('https://back-end-costs.vercel.app/projetos', {
             method: "GET",
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ function Projects(){
     
 
     function removeProject(id){
-        fetch(`https://back-end-costs-production.up.railway.app/projeto/${id}`, {
+        fetch(`https://back-end-costs.vercel.app/projeto/${id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': "application/json"
